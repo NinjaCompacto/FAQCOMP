@@ -1,0 +1,12 @@
+# Ignore arquivos de configuração e credenciais
+backend/.env
+
+# Ignore diretórios e arquivos gerados pelo sistema e IDEs
+node_modules/
+dist/
+.DS_Store
+
+# Logs e caches
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
