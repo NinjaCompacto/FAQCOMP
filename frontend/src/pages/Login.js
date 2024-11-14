@@ -8,31 +8,24 @@ function Login() {
 
   const [usuario, setUsuario] = useState('');
   const [senha, setSenha] = useState('');
-  const [error, setErro] = useState(null);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try{
-      //envia uma requisição para validação das credencias
+    try {
       const response = await axios.post('http://localhost:5000/api/auth/login', {
-        usuario,
-        senha
+          usuario,  // Envia o nome de usuário
+          senha     // Envia a senha
       });
+      
+      // Armazena o token JWT no localStorage
+      localStorage.setItem('authToken', response.data.token);
 
-      if (response.data.success){
-        console.log("Login bem sucedido!");
-        navigate('./menu')
-      }
-      else{
-        setErro("Credencias invalidas");
-        console.log(usuario);  
-        console.log(senha);  
-      }
-    }catch(err){
-      console.error(err);
-      setErro("Erro ao fazer login!");
+      // Redireciona o usuário para a página /menu após o login bem-sucedido
+      navigate('/menu');
+    } catch (error) {
+      alert('Credenciais inválidas');
     }
   };
 
@@ -55,7 +48,6 @@ function Login() {
               value={senha}
               onChange={(e) => setSenha(e.target.value)} />
           </FormGroup>
-          {error && <p className="error-message">{error}</p>}
           <Button type='submit'>Entrar</Button>
         </Form>
       </div>

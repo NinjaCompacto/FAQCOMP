@@ -4,7 +4,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Menu from "./pages/Menu";
-import Navbar from "./Components/Navbar/Navbar";
+import ProtectedRoute from './components/ProtectedRoute';
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/menu" element={<Menu />} />
+          <Route path="/menu" element={<ProtectedRoute> <Menu /> </ProtectedRoute>} />
           {/* Outras rotas podem ser adicionadas aqui */}
         </Routes>
       </Router>

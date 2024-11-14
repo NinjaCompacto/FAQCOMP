@@ -5,6 +5,7 @@ const cors = require('cors');
 const questionsRoutes = require('./routes/questions');
 const categoriesRoutes = require('./routes/categories');
 const authRoutes = require('./routes/auth');
+const menuRoutes = require('./routes/menu');
 const PORT = process.env.PORT || 5000;
 
 // Configuração do CORS
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use('/api/questions', questionsRoutes);
 app.use('/api/categories', categoriesRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/menu', menuRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
