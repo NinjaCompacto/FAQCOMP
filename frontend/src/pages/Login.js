@@ -22,8 +22,8 @@ function Login() {
       // Armazena o token JWT no localStorage
       localStorage.setItem('authToken', response.data.token);
 
-      // Redireciona o usuário para a página /menu após o login bem-sucedido
-      navigate('/menu');
+      // Redireciona o usuário para a página de perguntas após o login bem-sucedido
+      navigate('/adm/perguntas');
     } catch (error) {
       alert('Credenciais inválidas');
     }

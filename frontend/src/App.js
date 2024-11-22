@@ -3,9 +3,9 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
-import Menu from "./pages/Menu";
-import ProtectedRoute from './components/ProtectedRoute';
-import Navbar from "./components/Navbar/Navbar";
+import Perguntas from "./pages/Perguntas";
+import Categorias from "./pages/Categorias";
+import ProtectedRoute from './Components/ProtectedRoute';
 
 function App() {
   return (
@@ -13,7 +13,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/menu" element={<ProtectedRoute> <Menu /> </ProtectedRoute>} />
+          <Route path="/adm/perguntas" element={<ProtectedRoute> <Perguntas/> </ProtectedRoute>} />
+          <Route path="/adm/categorias" element={<ProtectedRoute> <Categorias/> </ProtectedRoute>} />
           {/* Outras rotas podem ser adicionadas aqui */}
         </Routes>
       </Router>
