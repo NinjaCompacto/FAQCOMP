@@ -32,6 +32,18 @@
   font-size: 18px;
   margin-left: 10px;
 }
+/* Estilo do ícone de logout */
+.logout-icon {
+  color: #fff;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.3s;
+  font-size: 30px;
+}
+
+.logout-icon:hover {
+  color: #c82333; /* Cor ao passar o mouse */
+}
 
 /* Estilos para dispositivos móveis */
 @media (max-width: 768px) {

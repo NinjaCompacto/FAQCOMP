@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Para navegação
+import { BiLogOut } from "react-icons/bi";
 import "./NavbarAdm.css";
 
 const NavbarAdm = () => {
@@ -19,10 +20,9 @@ const NavbarAdm = () => {
         <button onClick={() => navigate("/adm/perguntas")}>Perguntas</button>
         <button onClick={() => navigate("/adm/categorias")}>Categorias</button>
         {/* Botão de logout */}
-        <button className="logout-btn" onClick={handleLogout}>
-          Logout
-        </button>
       </div>
+
+      <BiLogOut className="logout-icon" onClick={handleLogout}></BiLogOut>
     </div>
   );
 };
