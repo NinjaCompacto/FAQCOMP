@@ -32,6 +32,30 @@
   font-size: 18px;
   margin-left: 10px;
 }
+
+.navbar-buttons {
+  display: flex;
+  justify-content: center; /* Centraliza os botões horizontalmente */
+  align-items: center; /* Alinha os botões verticalmente */
+  gap: 20px; /* Define o espaçamento entre os botões */
+}
+
+.navbar-buttons button {
+  padding: 10px 20px; /* Adiciona espaçamento interno para os botões */
+  font-size: 16px; /* Ajusta o tamanho da fonte */
+  background-color: #ffffff; /* Cor de fundo do botão */
+  color: #010b67; /* Cor do texto */
+  border: 1px solid #010b67; /* Borda do botão */
+  border-radius: 5px; /* Arredondamento dos cantos */
+  cursor: pointer; /* Mostra o cursor de clique */
+  transition: background-color 0.3s, color 0.3s; /* Animações suaves */
+}
+
+.navbar-buttons button:hover {
+  background-color: #545ebd; /* Cor de fundo ao passar o mouse */
+  color: #ffffff; /* Cor do texto ao passar o mouse */
+}
+
 /* Estilo do ícone de logout */
 .logout-icon {
   color: #fff;

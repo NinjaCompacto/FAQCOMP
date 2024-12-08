@@ -1,16 +1,69 @@
 /* src/pages/Login.css */
 .login-container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .centered-form {
-    width: 300px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
-  }
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    #4c79ff,
+    #6ec3ff
+  ); /* Fundo personalizado */
+}
+
+.centered-form {
+  width: 350px;
+  padding: 25px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+
+.centered-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4c79ff; /* Cor do título */
+}
+
+.centered-form input {
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.centered-form input:focus {
+  border-color: #4c79ff;
+  box-shadow: 0 0 5px rgba(76, 121, 255, 0.5);
+}
+
+.centered-form button {
+  width: 100%;
+  background-color: #4c79ff;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.centered-form button:hover {
+  background-color: #3b68e8;
+}
+
+.centered-form a {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #4c79ff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.centered-form a:hover {
+  text-decoration: underline;
+}

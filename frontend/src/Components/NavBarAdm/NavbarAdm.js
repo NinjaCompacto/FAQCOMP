@@ -14,14 +14,22 @@ const NavbarAdm = () => {
 
   return (
     <div className="navbar">
-      <h2>FAQIcomp</h2>
+      {/* MUDAR O NAVIGATE PARA HOME */}
+      <h2 onClick={() => navigate("/adm/perguntas")}>FAQIcomp</h2>
       <div className="navbar-buttons">
-        {/* Botões de navegação */}
-        <button onClick={() => navigate("/adm/perguntas")}>Perguntas</button>
-        <button onClick={() => navigate("/adm/categorias")}>Categorias</button>
-        {/* Botão de logout */}
-      </div>
+        <div className="per-button">
+          {/* Botão de perguntas */}
+          <button onClick={() => navigate("/adm/perguntas")}>Perguntas</button>
+        </div>
 
+        <div className="cat-button">
+          {/* Botão de categorias */}
+          <button onClick={() => navigate("/adm/categorias")}>
+            Categorias
+          </button>
+        </div>
+      </div>
+      {/* Botão de logout */}
       <BiLogOut className="logout-icon" onClick={handleLogout}></BiLogOut>
     </div>
   );
