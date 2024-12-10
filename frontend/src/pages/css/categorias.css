@@ -1,0 +1,16 @@
+.categorias-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .categorias-header h2 {
+    margin: 0;
+  }
+  
+  .categorias-header button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  
