@@ -46,6 +46,13 @@ const EditarCategoria = ({ isOpen, toggle, categoria, onCategoriaEditada }) => {
       .catch((error) => console.error("Erro ao editar categoria:", error));
   };
 
+  // Função para detectar a tecla Enter e salvar
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSave(); // Salva ao pressionar Enter
+    }
+  };
+
   return (
     <Offcanvas isOpen={isOpen} toggle={toggle} direction="end">
       <OffcanvasHeader toggle={toggle}>Editar Categoria</OffcanvasHeader>
@@ -58,6 +65,7 @@ const EditarCategoria = ({ isOpen, toggle, categoria, onCategoriaEditada }) => {
               type="text"
               value={nome}
               onChange={(e) => setNome(e.target.value)}
+              onKeyDown={handleKeyDown} // Adiciona o evento de teclado
             />
           </FormGroup>
           <Button color="success" onClick={handleSave}>

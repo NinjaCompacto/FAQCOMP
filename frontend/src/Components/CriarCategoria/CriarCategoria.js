@@ -9,7 +9,7 @@ import {
   Label,
   Input,
 } from "reactstrap";
-import "./CriarCategoria.css"
+import "./CriarCategoria.css";
 
 const CriarCategoria = ({ onCategoriaCriada }) => {
   const [isOpen, setIsOpen] = useState(false); // Controla o estado do Offcanvas
@@ -44,6 +44,13 @@ const CriarCategoria = ({ onCategoriaCriada }) => {
       .catch((error) => console.error("Erro ao criar categoria:", error));
   };
 
+  // Função para detectar a tecla Enter e salvar
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSave(); // Salva ao pressionar Enter
+    }
+  };
+
   return (
     <div>
       <Button color="primary" onClick={toggle}>
@@ -60,6 +67,7 @@ const CriarCategoria = ({ onCategoriaCriada }) => {
                 type="text"
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
+                onKeyDown={handleKeyDown} // Adiciona o evento de teclado
               />
             </FormGroup>
             <Button color="success" onClick={handleSave}>

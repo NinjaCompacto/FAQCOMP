@@ -8,6 +8,8 @@ import Categorias from "./pages/Categorias";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import EsqueciSenha from "./pages/EsqueciSenha";
 import RedefinirSenha from "./pages/RedefinirSenha";
+import CriarPergunta from "./pages/CriarPergunta";
+import EditarPergunta from "./pages/EditarPergunta";
 import Home from "./pages/Home";
 
 function App() {
@@ -32,6 +34,24 @@ function App() {
               <ProtectedRoute>
                 {" "}
                 <Categorias />{" "}
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/adm/criar-pergunta"
+            element={
+              <ProtectedRoute>
+                {" "}
+                <CriarPergunta />{" "}
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/adm/perguntas/editar/:id"
+            element={
+              <ProtectedRoute>
+                {" "}
+                <EditarPergunta/>{" "}
               </ProtectedRoute>
             }
           />
