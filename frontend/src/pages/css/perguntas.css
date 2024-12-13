@@ -1,9 +1,17 @@
+.perguntas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+
 .button-container {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 10px;
+    padding: 20px;
   }
-  
+
   .filters-container {
     display: flex;
     flex-wrap: wrap;
@@ -25,5 +33,9 @@
     align-self: flex-end; /* Garante que a lista fique alinhada à direita */
     height: 38px;
     max-width: 300px;
+  }
+
+  .actionButton {
+    margin-bottom: 10px;
   }
   

@@ -59,7 +59,6 @@ function Login() {
           />
         </FormGroup>
         <Button type="submit">Entrar</Button>
-        <a href="/esqueci-minha-senha">Esqueci minha senha</a>
       </Form>
     </div>
   );

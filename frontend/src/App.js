@@ -6,8 +6,6 @@ import Login from "./pages/Login";
 import Perguntas from "./pages/Perguntas";
 import Categorias from "./pages/Categorias";
 import ProtectedRoute from "./Components/ProtectedRoute";
-import EsqueciSenha from "./pages/EsqueciSenha";
-import RedefinirSenha from "./pages/RedefinirSenha";
 import CriarPergunta from "./pages/CriarPergunta";
 import EditarPergunta from "./pages/EditarPergunta";
 import Home from "./pages/Home";
@@ -57,8 +55,6 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/esqueci-minha-senha" element={<EsqueciSenha />} />
-          <Route path="/reset-password/:token" element={<RedefinirSenha />} />
           {/* Outras rotas podem ser adicionadas aqui */}
         </Routes>
       </Router>

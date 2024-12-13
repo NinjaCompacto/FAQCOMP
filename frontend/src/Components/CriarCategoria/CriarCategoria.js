@@ -53,9 +53,11 @@ const CriarCategoria = ({ onCategoriaCriada }) => {
 
   return (
     <div>
-      <Button color="primary" onClick={toggle}>
-        Criar Categoria
-      </Button>
+      <div className="createButton">
+        <Button color="primary" onClick={toggle}>
+          Criar Categoria
+        </Button>
+      </div>
       <Offcanvas isOpen={isOpen} toggle={toggle} direction="end">
         <OffcanvasHeader toggle={toggle}>Criar Nova Categoria</OffcanvasHeader>
         <OffcanvasBody>

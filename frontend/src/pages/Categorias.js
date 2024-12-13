@@ -68,53 +68,55 @@ const Categorias = () => {
   return (
     <div>
       <NavbarAdm />
-      <div className="categorias-header">
-        <h2>Categorias</h2>
-        <CriarCategoria onCategoriaCriada={() => fetchCategorias()} />
-      </div>
-      <div className="table">
-        <Table striped>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Nome</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            {categorias.map((categoria, index) => (
-              <tr key={categoria.id}>
-                <th scope="row">{index + 1}</th>
-                <td>{categoria.name}</td>
-                <td>
-                  <Button
-                    color="warning"
-                    size="sm"
-                    onClick={() => handleEdit(categoria)}
-                  >
-                    Editar
-                  </Button>{" "}
-                  <Button
-                    color="danger"
-                    size="sm"
-                    onClick={() => handleDelete(categoria.id)}
-                  >
-                    Deletar
-                  </Button>
-                </td>
+        <div className="container">
+        <div className="categorias-header">
+          <h2>Categorias</h2>
+          <CriarCategoria onCategoriaCriada={() => fetchCategorias()} />
+        </div>
+        <div className="table">
+          <Table striped>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Ações</th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
-      </div>
-      {categoriaSelecionada && (
-        <EditarCategoria
-          isOpen={isEditOpen}
-          toggle={() => setIsEditOpen(!isEditOpen)}
-          categoria={categoriaSelecionada}
-          onCategoriaEditada={fetchCategorias}
-        />
-      )}
+            </thead>
+            <tbody>
+              {categorias.map((categoria, index) => (
+                <tr key={categoria.id}>
+                  <th scope="row">{index + 1}</th>
+                  <td>{categoria.name}</td>
+                  <td>
+                    <Button
+                      color="warning"
+                      size="sm"
+                      onClick={() => handleEdit(categoria)}
+                    >
+                      Editar
+                    </Button>{" "}
+                    <Button
+                      color="danger"
+                      size="sm"
+                      onClick={() => handleDelete(categoria.id)}
+                    >
+                      Deletar
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </div>
+        {categoriaSelecionada && (
+          <EditarCategoria
+            isOpen={isEditOpen}
+            toggle={() => setIsEditOpen(!isEditOpen)}
+            categoria={categoriaSelecionada}
+            onCategoriaEditada={fetchCategorias}
+          />
+        )}
+        </div>
     </div>
   );
 };

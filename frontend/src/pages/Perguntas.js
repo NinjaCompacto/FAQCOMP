@@ -65,68 +65,76 @@ const Perguntas = () => {
   return (
         <div>
         <NavbarAdm />
-        {/* Botão "Criar Pergunta" */}
-        <div className="button-container">
-            <Button color="primary" onClick={() => navigate("/adm/criar-pergunta")}>
-            Criar Pergunta
-            </Button>
-        </div>
-        {/* Filtros */}
-        <div className="filters-container">
-            <Input
-            type="text"
-            placeholder="Pesquisar por título"
-            value={pesquisa}
-            onChange={(e) => setPesquisa(e.target.value)}
-            className="search-bar"
-            />
-            <Input
-            type="select"
-            value={categoriaSelecionada}
-            onChange={(e) => setCategoriaSelecionada(e.target.value)}
-            className="dropdown-filter"
-            >
-            <option value="None">Todas as Categorias</option>
-            {categorias.map((categoria) => (
-                <option key={categoria.id} value={categoria.id}>
-                {categoria.name}
-                </option>
-            ))}
-            </Input>
-        </div>
-        {/* Tabela de Perguntas */}
-        <Table striped>
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Título</th>
-                <th>Categoria</th>
-                <th>Ações</th>
-            </tr>
-            </thead>
-            <tbody>
-            {perguntasFiltradas.map((pergunta, index) => (
-                <tr key={pergunta.id}>
-                <th scope="row">{index + 1}</th>
-                <td>{pergunta.title}</td>
-                <td>
-                    {
-                    categorias.find((categoria) => categoria.id === pergunta.category_id)
-                        ?.name || "Sem Categoria"
-                    }
-                </td>
-                <td>
-                    <Button color="warning" size="sm"  onClick={() => navigate(`/adm/perguntas/editar/${pergunta.id}`)}>
-                    Editar
-                    </Button>{" "}
-                    <Button color="danger" size="sm"  onClick={() => handleDelete(pergunta.id)} >
-                    Deletar
-                    </Button>
-                </td>
-                </tr>
-            ))}
-            </tbody>
-        </Table>
+
+          <div className="container">
+          {/* Botão "Criar Pergunta" */}
+          <div className="perguntas-header">
+            <h2>Perguntas</h2>
+            <div className="button-container">
+                <Button color="primary" onClick={() => navigate("/adm/criar-pergunta")}>
+                Criar Pergunta
+                </Button>
+            </div>
+          </div>
+          {/* Filtros */}
+          <div className="filters-container">
+              <Input
+              type="text"
+              placeholder="Pesquisar por título"
+              value={pesquisa}
+              onChange={(e) => setPesquisa(e.target.value)}
+              className="search-bar"
+              />
+              <Input
+              type="select"
+              value={categoriaSelecionada}
+              onChange={(e) => setCategoriaSelecionada(e.target.value)}
+              className="dropdown-filter"
+              >
+              <option value="None">Todas as Categorias</option>
+              {categorias.map((categoria) => (
+                  <option key={categoria.id} value={categoria.id}>
+                  {categoria.name}
+                  </option>
+              ))}
+              </Input>
+          </div>
+          {/* Tabela de Perguntas */}
+          <Table striped>
+              <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Título</th>
+                  <th>Categoria</th>
+                  <th>Ações</th>
+              </tr>
+              </thead>
+              <tbody>
+              {perguntasFiltradas.map((pergunta, index) => (
+                  <tr key={pergunta.id}>
+                  <th scope="row">{index + 1}</th>
+                  <td>{pergunta.title}</td>
+                  <td>
+                      {
+                      categorias.find((categoria) => categoria.id === pergunta.category_id)
+                          ?.name || "Sem Categoria"
+                      }
+                  </td>
+                  <td>
+                    <div className="actionButton">
+                      <Button  color="warning" size="sm"  onClick={() => navigate(`/adm/perguntas/editar/${pergunta.id}`)}>
+                      Editar
+                      </Button>{" "}
+                      <Button color="danger" size="sm"  onClick={() => handleDelete(pergunta.id)} >
+                      Deletar
+                      </Button>
+                    </div>
+                  </td>
+                  </tr>
+              ))}
+              </tbody>
+          </Table>
+          </div>
         </div>
   );
 };
