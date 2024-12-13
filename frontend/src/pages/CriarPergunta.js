@@ -111,7 +111,7 @@ const CriarPergunta = () => {
         <Button color="success" onClick={handleSave}>
           Salvar
         </Button>{" "}
-        <Button color="secondary" onClick={() => navigate("/perguntas")}>
+        <Button color="secondary" onClick={() => navigate("/adm/perguntas")}>
           Cancelar
         </Button>
       </Form>

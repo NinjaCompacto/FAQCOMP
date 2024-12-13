@@ -1,0 +1,36 @@
+.filter-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 20px;
+  }
+  
+  .filter-dropdown {
+    width: 200px;
+    height: 38px;
+    padding: 6px 12px;
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  
+  .accordion-container {
+    margin: 20px;
+  }
+  
+  .accordion-container button {
+    margin-top: 10px;
+  }
+  
+  .content-summary {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Mostra no máximo 3 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+  
+  .accordion-header strong {
+    font-weight: bold; /* Define o título em negrito */
+  }
+  

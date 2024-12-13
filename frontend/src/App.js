@@ -11,6 +11,7 @@ import RedefinirSenha from "./pages/RedefinirSenha";
 import CriarPergunta from "./pages/CriarPergunta";
 import EditarPergunta from "./pages/EditarPergunta";
 import Home from "./pages/Home";
+import PerguntaCompleta from "./pages/PerguntaCompleta";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} /> {/* Página Inicial */}
           <Route path="/login" element={<Login />} />
+          <Route path="/pergunta/:id" element={<PerguntaCompleta />} />
           <Route
             path="/adm/perguntas"
             element={

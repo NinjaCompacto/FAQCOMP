@@ -14,7 +14,7 @@ function Login() {
 
     try {
       const response = await axios.post(
-        "http://192.168.1.11:5000/api/auth/login",
+        "http://localhost:5000/api/auth/login",
         {
           usuario, // Envia o nome de usuário
           senha, // Envia a senha
