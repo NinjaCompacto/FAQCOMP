@@ -14,12 +14,15 @@ function Login() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "http://192.168.1.11:5000/api/auth/login",
         {
           usuario, // Envia o nome de usuário
           senha, // Envia a senha
         }
       );
+
+      console.log(usuario);
+      console.log(senha);
 
       // Armazena o token JWT no localStorage
       localStorage.setItem("authToken", response.data.token);
