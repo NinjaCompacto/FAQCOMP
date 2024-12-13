@@ -37,7 +37,7 @@ function Login() {
   return (
     <div className="login-container">
       <Form className="centered-form" onSubmit={handleSubmit}>
-        <h2>Bem-vindo ao FAQCOMP</h2>
+        <h2>Bem-vindo ao FAQICOMP</h2>
         <FormGroup>
           <Label for="usuario">Usuário</Label>
           <Input
